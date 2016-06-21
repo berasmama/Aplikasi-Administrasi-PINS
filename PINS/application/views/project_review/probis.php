@@ -1,6 +1,8 @@
-<?php /*
+<?php 
+/*if(isset($_GET['print'])){
 header("Content-type: application/vnd.ms-word");
-header("Content-Disposition: attachment;Filename=document_name.doc");*/
+header("Content-Disposition: attachment;Filename=document_name.doc");
+}*/
 ?>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
@@ -228,6 +230,9 @@ header("Content-Disposition: attachment;Filename=document_name.doc");*/
       <td></td>
     </tr>
   </table>
-  <button class="btn btn-success">Preview in Word</button>
+  <?php
+  echo "<a href=\"javascript:history.go(-1)\">"?>
+  <button class="btn btn-warning">Back</button>
+  </a>
   </div>
 </div>

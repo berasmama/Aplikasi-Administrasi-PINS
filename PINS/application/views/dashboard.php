@@ -8,6 +8,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
+  <!-- MyStyle.css -->
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/mystyle.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -37,15 +39,15 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition skin-red-light sidebar-mini">
+<div class="wrapper" style="min-height=">
 
-  <?php echo include('header.php'); ?>
+  <?php include('header.php'); ?>
   <!-- Left side column. contains the logo and sidebar -->
   <?php include('left_sidebar.php'); ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background:white">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -60,7 +62,7 @@
 
     <!-- Main content -->
     <section class="content">
-      
+      <?php include('project/probis.php'); ?>
     </section>
     <!-- /.content -->
   </div>

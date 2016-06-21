@@ -1,7 +1,8 @@
 <div class="row">
 <div class="col-lg-12">
 <h1>Proposal Bisnis</h1>
-<form action="<?php echo base_url() ?>index.php/project/probis" method="post" target="_blank">
+<form action="<?php echo base_url() ?>index.php/project/probis" method="post" >
+<label>Nama Project : </label><input type="text" name="nama_project" class="form-control">
   <table  class="table">
     <tr>
       <td colspan="3" width="70%">Unit Public Sector, Finance & Construction Services </td>
@@ -18,7 +19,7 @@
       <td><input type="text" class="form-control" name="probis_1"></td>
     </tr>
     <tr>
-      <td colspan="4" style="text-align:center;background:grey;"><b>PROPOSAL BISNIS</b></td>
+      <td colspan="4" bgcolor="#f5f5f5"><center><b>PROPOSAL BISNIS</b></center></td>
     </tr>
   </table>
 
@@ -224,7 +225,7 @@
     </tr>
   </table>
   <input type="submit" class="btn btn-primary" value="Preview" name="preview">
-  <input type="submit" class="btn btn-warning" value="Send" name="send">
+  <input type="submit" class="btn btn-warning" value="Save" name="save">
   </form>
   </div>
 </div>

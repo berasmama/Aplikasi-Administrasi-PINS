@@ -1,11 +1,12 @@
 <?php 
-/*if(isset($_GET['print'])){
+if($this->uri->segment(4) == "print"){
 header("Content-type: application/vnd.ms-word");
 header("Content-Disposition: attachment;Filename=document_name.doc");
-}*/
+}
 ?>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
+<title><?php echo $probis_1; ?></title>
 <div class="row">
 <div class="col-lg-12">
   <table  class="table" width="100%">
@@ -231,8 +232,10 @@ header("Content-Disposition: attachment;Filename=document_name.doc");
     </tr>
   </table>
   <?php
+  if($this->uri->segment(4) == null){
   echo "<a href=\"javascript:history.go(-1)\">"?>
   <button class="btn btn-warning">Back</button>
   </a>
+  <?php } ?>
   </div>
 </div>

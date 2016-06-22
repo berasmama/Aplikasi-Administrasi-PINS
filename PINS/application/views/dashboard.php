@@ -49,20 +49,27 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper" style="background:white">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
 
     <!-- Main content -->
     <section class="content">
-      <?php include('project/probis.php'); ?>
+      <?php 
+      $content = $this->uri->segment(2);
+      switch ($content) {
+        case 'probis':
+          include('project/probis.php'); 
+          break;
+        case 'list_probis':
+          include('project/list.php'); 
+          break;
+          case 'update_probis':
+          include('project_update/probis.php'); 
+          break;
+        default:
+          echo "Welcome";
+          break;
+      }
+      
+      ?>
     </section>
     <!-- /.content -->
   </div>

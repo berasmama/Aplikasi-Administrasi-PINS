@@ -20,19 +20,19 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-  <img src="<?php echo base_url(); ?>assets/images/product-logo.png" height="100px">
+  <img src="<?php echo base_url(); ?>assets/img/product-logo.png" height="100px">
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="<?php echo base_url() ?>index.php/login/do_login" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Username">
+        <input type="text" class="form-control" placeholder="NIP" name="nip">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control " placeholder="Password">
+        <input type="password" class="form-control " placeholder="Password" name="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -40,14 +40,14 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-danger btn-block btn-flat">Masuk</button>
+          <input type="submit" class="btn btn-danger btn-block btn-flat" value="Masuk" name="submit">
         </div>
         <!-- /.col -->
       </div>
     </form>
 	<div class="">
     	<a href="#">Lupa password</a><br>
-    	<a href="#" class="text-center">Daftar baru</a>
+    	<a href="<?php echo base_url() ?>index.php/login/register" class="text-center">Daftar baru</a>
 	</div>
   </div>
   <!-- /.login-box-body -->

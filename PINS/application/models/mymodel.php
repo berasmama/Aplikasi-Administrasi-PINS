@@ -7,6 +7,10 @@ class mymodel extends CI_Model{
 		return $res;
 		}
 
+		public function insert_pegawai($tableName,$data){
+		$res = $this->db->insert($tableName,$data);
+		return $res;
+		}
 		public function select_list($tableName,$where){
 			$res = $this->db->get_where($tableName,$where);
 			return $res;

@@ -55,6 +55,9 @@
       <?php 
       $content = $this->uri->segment(2);
       switch ($content) {
+        case 'profile':
+          include('profile.php'); 
+          break;
         case 'probis':
           include('project/probis.php'); 
           break;

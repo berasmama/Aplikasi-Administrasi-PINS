@@ -29,18 +29,14 @@
 <body class="hold-transition register-page">
 <div class="register-box" style="margin-top:25px;">
   <div class="register-logo">
-    <img src="<?php echo base_url(); ?>assets/images/product-logo.png" height="100px">
+    <img src="<?php echo base_url(); ?>assets/img/product-logo.png" height="100px">
   </div>
 <div class="row">
   <div class="register-box-body col-md-12">
     <p class="login-box-msg"><b>Daftar keanggotaan baru</b></p>
 	
-    <form action="../../index.html" method="post">
+    <form action="<?php echo base_url()?>index.php/login/do_register" method="post" enctype="multipart/form-data">
 	  <div class="col-md-6">
-		  <div class="form-group has-feedback">
-			<input type="text" name="username" class="form-control" placeholder="Username">
-			<span class="glyphicon glyphicon-user form-control-feedback"></span>
-		  </div>
 		  <div class="form-group has-feedback">
 			<input type="text" name="firstname" class="form-control" placeholder="Nama Depan">
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -68,7 +64,7 @@
 			<span class="glyphicon glyphicon-tag form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="text" name="birthday" class="form-control" id="datepicker" placeholder="Tanggal Lahir">
+			<input type="text" name="birthday" class="form-control" id="datepicker" placeholder="Tanggal Lahir" data-date-format="yyyy/mm/dd">
 			<span class="glyphicon glyphicon-calendar form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
@@ -76,11 +72,11 @@
 			<span class="glyphicon glyphicon-home form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="textarea" name="contact" class="form-control" placeholder="Kontak">
+			<input type="number" name="contact" class="form-control" placeholder="Kontak">
 			<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="file" name="photo" class="form-control" style="height:80px;">
+			<input type="file" name="photo" class="form-control" style="">
 			<span class="glyphicon glyphicon-camera form-control-feedback"></span>
 		  </div>
 	  </div>
@@ -117,7 +113,10 @@
   $('#datepicker').datepicker({
       autoclose: true
   });
-
+  $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd',
+    startDate: '-3d'
+  });
   $(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-red',

@@ -4,11 +4,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url().'assets/img/photo_profil/'.$this->session->userdata('foto'); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#">Manager</a>
+          <p><?php echo $this->session->userdata('firstname').' '.$this->session->userdata('lastname') ?></p>
+          <a href="#"><?php echo $this->session->userdata('jabatan') ?></a>
         </div>
       </div>
       <!-- search form -->
@@ -26,7 +26,7 @@
             <li><a href="<?php echo base_url()?>index.php/dashboard/probis"><i class="fa fa-circle-o"></i> Proposal Bisnis</a></li>
           </ul>
         </li>
-        <li class="active treeview">
+        <li class="treeview">
           <a href="#">
             <i class="fa fa-list-alt"></i> <span>Lihat Laporan</span> <i class="fa fa-angle-left pull-right"></i>
           </a>

@@ -24,6 +24,7 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo base_url()?>index.php/dashboard/justifikasi"><i class="fa fa-circle-o"></i> Justifikasi</a></li>
             <li><a href="<?php echo base_url()?>index.php/dashboard/probis"><i class="fa fa-circle-o"></i> Proposal Bisnis</a></li>
+            <li><a href="<?php echo base_url()?>index.php/dashboard/alur_proyek"><i class="fa fa-circle-o"></i> Alur Proyek</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -31,8 +32,9 @@
             <i class="fa fa-list-alt"></i> <span>Lihat Laporan</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Justifikasi</a></li>
+            <li class="active"><a href="<?php echo base_url()?>index.php/dashboard/list_justifikasi"><i class="fa fa-circle-o"></i> Justifikasi</a></li>
             <li><a href="<?php echo base_url()?>index.php/dashboard/list_probis"><i class="fa fa-circle-o"></i> Proposal Bisnis</a></li>
+            <li><a href="<?php echo base_url()?>index.php/dashboard/list_alur_proyek"><i class="fa fa-circle-o"></i> Alur Proyek</a></li>
           </ul>
         </li>
       </ul>

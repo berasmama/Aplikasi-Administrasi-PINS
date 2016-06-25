@@ -67,6 +67,24 @@
           case 'update_probis':
           include('project_update/probis.php'); 
           break;
+        case 'justifikasi':
+          include('project/justifikasi.php');
+          break;
+        case 'list_justifikasi':
+          include('project/list.php');
+          break;
+          case 'update_justifikasi':
+          include('project_update/justifikasi.php');
+          break;
+        case 'alur_proyek':
+          include('project/alur_proyek.php');
+          break;
+        case 'list_alur_proyek':
+          include('project/list.php');
+          break;
+          case 'update_alur_proyek';
+          include('project_update/alur_proyek.php');
+          break;
         default:
           echo "Welcome";
           break;

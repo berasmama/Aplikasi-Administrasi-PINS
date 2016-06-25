@@ -13,6 +13,7 @@ class dashboard extends CI_Controller{
 		$this->load->view('dashboard');
 	}
 
+	/*Probis*/
 	public function probis(){
 		$this->load->view('dashboard');
 	}
@@ -24,6 +25,36 @@ class dashboard extends CI_Controller{
 			'data' => $res->result_array()
 			));
 	}
+	/*END*/
+
+	/*Justifikasi*/
+	public function justifikasi(){
+		$this->load->view('dashboard');
+	}
+
+	public function list_justifikasi(){
+		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'justifikasi','staff' => 'Taufan'));
+		$this->load->view('dashboard',array(
+			'title' => 'Daftar Justifikasi',
+			'data' => $res->result_array()
+			));
+	}
+	/*END*/
+
+	/*Alur Proyek*/
+	public function alur_proyek(){
+		$this->load->view('dashboard');
+	}
+
+	public function list_alur_proyek(){
+		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'alur_proyek','staff' => 'Taufan'));
+		$this->load->view('dashboard',array(
+			'title' => 'Daftar Alur Proyek',
+			'data' => $res->result_array()
+			));
+	}
+	/*END*/
+
 
 	public function profile(){
 		$res = $this->mymodel->select_data('tbl_pegawai',array(

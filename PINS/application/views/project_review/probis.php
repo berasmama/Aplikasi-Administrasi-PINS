@@ -6,7 +6,7 @@ header("Content-Disposition: attachment;Filename=document_name.doc");
 ?>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
 <meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">
-<title><?php echo $probis_1; ?></title>
+<title><?php echo $nama_project; ?></title>
 <div class="row">
 <div class="col-lg-12">
   <table  class="table" width="100%">

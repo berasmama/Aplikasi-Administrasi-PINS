@@ -19,6 +19,11 @@ class project extends CI_Controller{
 				'staff' => 'Taufan',
 				'data' => $data
 				));
+			$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'anggota',
+				'keterangan' => ' Telah membuat dokumen Probis.',
+				));
 		}
 	}
 
@@ -53,6 +58,11 @@ class project extends CI_Controller{
 				'data' => $data
 			),"id_project = $id");
 		$this->load->view('dashboard');
+		$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'anggota',
+				'keterangan' => ' Telah memperbaharui dokumen Probis.',
+				));
 		}	
 	}
 	/*END*/
@@ -74,6 +84,11 @@ class project extends CI_Controller{
 				'tanggal' => date('Y-m-d H:i:s'),
 				'staff' => 'Taufan',
 				'data' => $data
+				));
+			$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'anggota',
+				'keterangan' => ' Telah membuat dokumen Justifikasi.',
 				));
 		}
 	}
@@ -108,6 +123,11 @@ class project extends CI_Controller{
 				'staff' => 'Taufan',
 				'data' => $data
 			),"id_project = $id");
+			$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'anggota',
+				'keterangan' => ' Telah memperbaharui dokumen Justifikasi.',
+				));
 		$this->load->view('dashboard');
 		}	
 	}

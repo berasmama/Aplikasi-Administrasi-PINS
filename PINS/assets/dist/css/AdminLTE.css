@@ -820,7 +820,7 @@ a:focus {
   border-bottom: #1c2529;
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a {
-  background: #181f23;
+  background: red;
   color: #b8c7ce;
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li > a,

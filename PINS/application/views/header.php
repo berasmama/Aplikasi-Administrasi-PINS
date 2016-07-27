@@ -16,7 +16,16 @@
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
-          
+          <?php 
+          if($this->session->userdata('jabatan') == "Manager"){
+          ?>
+          <li class="dropdown messages-menu">
+            <a href="<?php echo base_url().'index.php/dashboard/anggota_baru' ?>">
+              <i class="fa fa-user-plus"></i>
+              <span class="label label-success"><?php echo $this->session->userdata('notif'); ?></span>
+            </a>
+          </li>
+          <?php } ?>
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

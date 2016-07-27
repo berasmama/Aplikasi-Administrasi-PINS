@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Registration Page</title>
+  <title>Administrasi PINS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -38,45 +38,45 @@
     <form action="<?php echo base_url()?>index.php/login/do_register" method="post" enctype="multipart/form-data">
 	  <div class="col-md-6">
 		  <div class="form-group has-feedback">
-			<input type="text" name="firstname" class="form-control" placeholder="Nama Depan">
+			<input type="text" name="firstname" class="form-control" placeholder="Nama Depan" required>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="text" name="lastname" class="form-control" placeholder="Nama Belakang">
+			<input type="text" name="lastname" class="form-control" placeholder="Nama Belakang" required>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="email" name="email" class="form-control" placeholder="Email">
+			<input type="email" name="email" class="form-control" placeholder="Email" required>
 			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="password" name="password" class="form-control" placeholder="Password">
+			<input type="password" name="password" class="form-control" placeholder="Password" required pattern=".{0}|.{8,15}" required title="Isikan 8 - 15 karakter">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="password" name="repassword" class="form-control" placeholder="Ulangi password">
+			<input type="password" name="repassword" class="form-control" placeholder="Ulangi password" required pattern=".{0}|.{8,15}" required title="Isikan 8 - 15 karakter">
 			<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 		  </div>
 	  </div>
 	  <div class="col-md-6">
 		  <div class="form-group has-feedback">
-			<input type="text" name="nip" class="form-control" placeholder="NIP">
+			<input type="text" name="nip" class="form-control" placeholder="NIP" required>
 			<span class="glyphicon glyphicon-tag form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="text" name="birthday" class="form-control" id="datepicker" placeholder="Tanggal Lahir" data-date-format="yyyy/mm/dd">
+			<input type="text" name="birthday" class="form-control" id="datepicker" placeholder="Tanggal Lahir" data-date-format="yyyy/mm/dd" required>
 			<span class="glyphicon glyphicon-calendar form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="textarea" name="address" class="form-control" placeholder="Alamat">
+			<input type="textarea" name="address" class="form-control" placeholder="Alamat" required>
 			<span class="glyphicon glyphicon-home form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="number" name="contact" class="form-control" placeholder="Kontak">
+			<input type="text" name="contact" class="form-control" placeholder="Kontak" required>
 			<span class="glyphicon glyphicon-phone form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="file" name="photo" class="form-control" style="">
+			<input type="file" name="photo" class="form-control" style="" required>
 			<span class="glyphicon glyphicon-camera form-control-feedback"></span>
 		  </div>
 	  </div>
@@ -86,14 +86,14 @@
       <div class="col-md-12" style="text-align:right;">
         <div class="checkbox icheck">
           <label>
-             <input type="checkbox"> Saya setuju dengan <a href="#">ketentuan</a> yang berlaku.
+             <input type="checkbox" required> Saya setuju dengan <a href="#">ketentuan</a> yang berlaku.
           </label>
         </div>
       </div>
       <!-- /.col -->
       <!-- /.col -->
 	  <div class="col-md-12" style="text-align:right;">
-		Jika sudah menjadi anggota, klik <a href="login.html" class="text-center">disini</a>
+		Jika sudah menjadi anggota, klik <a href="<?php echo base_url() ?>index.php/login" class="text-center">disini</a>
 	  </div>
     </form>
   </div>

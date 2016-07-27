@@ -1,6 +1,7 @@
 <form action="<?php echo base_url() ?>index.php/dashboard/update_profile" method="post" enctype="multipart/form-data">
 <div class="row">
 	<h1>Edit Profile</h1>
+	<p style="color:red;text-align:center"><?php echo $this->session->flashdata('error_update_profil'); ?></p>
 <div class="col-lg-3 col-xs-12">
 	<center><img src="<?php echo base_url().'assets/img/photo_profil/'.$foto; ?>" class="img-responsive"></center>
 </div>
@@ -20,11 +21,11 @@
 			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="password" name="password_old" class="form-control" placeholder="Password Lama">
+			<input type="password" name="password_old" class="form-control" placeholder="Password Lama" required pattern=".{0}|.{8,15}" required title="Isikan 8 - 15 karakter">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-feedback">
-			<input type="password" name="password_new" class="form-control" placeholder="Password Baru">
+			<input type="password" name="password_new" class="form-control" placeholder="Password Baru" required pattern=".{0}|.{8,15}" required title="Isikan 8 - 15 karakter">
 			<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 		  </div>
 	  </div>

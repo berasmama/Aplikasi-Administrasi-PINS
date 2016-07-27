@@ -2,16 +2,19 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class login extends CI_Controller{
-
 	public function index(){
+		if($this->session->userdata('nip')){
+            	redirect(base_url()."index.php/dashboard/");
+            }else{
 		$this->load->view('login');
+	}
 	}
 
 	public function do_login(){
 		$nip = $_POST['nip'];
 		$res = $this->mymodel->select_data('tbl_pegawai',"nip = $nip");
 		$row = $res->row();
-		if(md5($_POST['password']) == $row->password){
+		if(md5($_POST['password']) == $row->password && $row->is_valid != 0){
 			$session = array(
 				'nip' 		=> $row->nip,
 				'firstname'	=> $row->firstname,
@@ -23,6 +26,7 @@ class login extends CI_Controller{
 			$this->session->set_userdata($session);
 			redirect(base_url()."index.php/dashboard/");
 		}else{
+			$this->session->set_flashdata('error','NIP dan Password tidak cocok');
 			redirect(base_url()."index.php/login/");
 		}
 	}
@@ -52,8 +56,13 @@ class login extends CI_Controller{
 				'alamat'	=> $_POST['address'],
 				'no_hp'		=> $_POST['contact'],
 				'foto'		=> $file_name['file_name'],
-				'jabatan'	=> 'staff',
+				'jabatan'	=> 'Staff',
 				'is_valid' 	=> 0
+				));
+			$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $_POST['nip'],
+				'jenis' => 'anggota',
+				'keterangan' => $_POST['firstname'].' Telah mendaftar, mohon segera konfirmasi akun ini.',
 				));
 			redirect(base_url()."index.php/login/");
 		}

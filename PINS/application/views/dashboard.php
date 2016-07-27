@@ -58,6 +58,12 @@
         case 'profile':
           include('profile.php'); 
           break;
+        case 'anggota_baru':
+          include('anggota.php');
+        break;
+        case 'anggota_daftar':
+          include('anggota.php');
+        break;
         case 'probis':
           include('project/probis.php'); 
           break;
@@ -86,7 +92,9 @@
           include('project_update/alur_proyek.php');
           break;
         default:
-          echo "Welcome";
+          if($this->session->userdata('jabatan') == "Manager"){
+            include('timeline.php');
+          }
           break;
       }
       

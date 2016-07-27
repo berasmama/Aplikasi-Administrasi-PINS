@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>Administrasi PINS</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -25,7 +25,7 @@
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
+    <p style="color:red;text-align:center"><?php echo $this->session->flashdata('error'); ?></p>
     <form action="<?php echo base_url() ?>index.php/login/do_login" method="post">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="NIP" name="nip">

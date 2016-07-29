@@ -168,14 +168,21 @@ class project extends CI_Controller{
 	      		'foto' => $this->_uploaded[$i]['file_name']));
 	      }
 	    }
+	    $this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'project',
+				'keterangan' => ' Telah mengunggah Dokumen yang telah disetujui.',
+				));
 	    $this->session->set_flashdata('upload_message','Unggah berhasil');
 	        redirect(base_url()."index.php/project/upload/");
 	}
 
 	public function list_upload(){
 		$res = $this->db->select('*')->group_by('id_project')->get('tbl_upload_project');
+		$res2 = $this->db->select('jenis_project')->distinct()->get('tbl_project');
 		$this->load->view('dashboard',array(
-			'data' => $res->result_array()
+			'data' => $res->result_array(),
+			'data2' => $res2->result_array()
 			));
 	}
 
@@ -185,6 +192,11 @@ class project extends CI_Controller{
 			$foto = $row['foto'];
 			unlink("./assets/img/upload_project/$foto");
 		}
+		$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'project',
+				'keterangan' => ' Telah menghapus Dokumen yang telah disetujui.',
+				));
 		$this->mymodel->delete('tbl_upload_project',array('id_project' => $id_project));
 			    $this->session->set_flashdata('upload_message','Dokumen berhasil dihapus');
 	        redirect(base_url()."index.php/project/list_upload/");
@@ -194,8 +206,26 @@ class project extends CI_Controller{
 		$res = $this->mymodel->select_data('tbl_upload_project',array('id_project' => $id_project));
 		$this->load->view('dashboard',array('data' => $res->result_array()));
 	}
+
+	public function cari_upload(){
+		$id_project = $_POST['id_project'];
+		$jenis_project = $_POST['jenis_project'];
+		$where = "id_project='$id_project' and jenis_project='$jenis_project' or id_project='$id_project' or jenis_project='$jenis_project'";
+		$res = $this->db->select('*')->where($where)->group_by('id_project')->get('tbl_upload_project');
+		$res2 = $this->db->select('jenis_project')->distinct()->get('tbl_project');
+		$this->load->view('dashboard',array(
+			'data' => $res->result_array(),
+			'data2' => $res2->result_array()
+			));
+	}
+
 	public function delete($id){
 		$res = $this->mymodel->delete('tbl_project',array('id_project' => $id));
+		$this->mymodel->insert_timeline('tbl_timeline',array(
+				'user' => $this->session->userdata('nip'),
+				'jenis' => 'project',
+				'keterangan' => ' Telah menghapus project ID Project'.$id.'.',
+				));
 		$link = base_url()."index.php/dashboard";
 		header("location:$link");
 	}

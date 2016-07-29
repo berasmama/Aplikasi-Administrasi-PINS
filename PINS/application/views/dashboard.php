@@ -97,6 +97,9 @@
         case 'list_upload';
           include('project/list_upload.php');
           break;
+        case 'cari_upload';
+          include('project/list_upload.php');
+          break;
         case 'detail_upload';
           include('project/detail_upload.php');
           break;

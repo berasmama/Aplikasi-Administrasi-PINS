@@ -29,6 +29,15 @@
             <li><a href="<?php echo base_url()?>index.php/dashboard/list_alur_proyek"><i class="fa fa-circle-o"></i> Alur Proyek</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-upload"></i> <span>Unggah Laporan</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="<?php echo base_url()?>index.php/project/upload"><i class="fa fa-circle-o"></i> Unggah</a></li>
+            <li><a href="<?php echo base_url()?>index.php/project/list_upload"><i class="fa fa-circle-o"></i> Daftar Unggahan</a></li>
+          </ul>
+        </li>
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>Anggota</span> <i class="fa fa-angle-left pull-right"></i>

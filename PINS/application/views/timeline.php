@@ -1,3 +1,4 @@
+<?php echo $this->session->flashdata('timeline'); ?>
 <div class="box box-success" style="position: relative; left: 0px; top: 0px;">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
               <i class="fa fa-retweet"></i>
@@ -9,7 +10,11 @@
               <!-- chat item -->
               <?php foreach ($data as $row) {?>
               <div class="item">
-                <img src="<?php echo base_url().'assets/img/photo_profil/'.$row->foto; ?>" alt="user image" class="online">
+                <img src="<?php echo base_url().'assets/img/photo_profil/'.$row->foto; ?>" alt="user image" class="<?php if($row->jenis == 'anggota'){
+                  echo 'offline';
+                }else{
+                  echo 'online';
+                } ?>">
 
                 <p class="message">
                   <a href="#" class="name">

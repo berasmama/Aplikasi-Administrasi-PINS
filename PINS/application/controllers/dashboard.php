@@ -53,7 +53,12 @@ class dashboard extends CI_Controller{
 	}
 
 	public function list_probis(){
-		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'probis','staff' => 'Taufan'));
+		if($this->session->userdata('jabatan') != 'Manager'){
+		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'probis','staff' => $this->session->userdata('nip')));
+		}else{
+			$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'probis'));
+		}
+		
 		$this->load->view('dashboard',array(
 			'title' => 'Daftar Probis',
 			'data' => $res->result_array()
@@ -67,7 +72,11 @@ class dashboard extends CI_Controller{
 	}
 
 	public function list_justifikasi(){
-		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'justifikasi','staff' => 'Taufan'));
+		if($this->session->userdata('jabatan') != 'Manager'){
+		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'justifikasi','staff' => $this->session->userdata('nip')));
+		}else{
+			$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'justifikasi'));
+		}
 		$this->load->view('dashboard',array(
 			'title' => 'Daftar Justifikasi',
 			'data' => $res->result_array()
@@ -81,7 +90,11 @@ class dashboard extends CI_Controller{
 	}
 
 	public function list_alur_proyek(){
-		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'alur_proyek','staff' => 'Taufan'));
+		if($this->session->userdata('jabatan') != 'Manager'){
+		$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'alur_proyek','staff' => $this->session->userdata('nip')));
+		}else{
+			$res = $this->mymodel->select_list('tbl_project',array('jenis_project' => 'alur_proyek'));
+		}
 		$this->load->view('dashboard',array(
 			'title' => 'Daftar Alur Proyek',
 			'data' => $res->result_array()
@@ -219,6 +232,6 @@ class dashboard extends CI_Controller{
 		$this->session->set_flashdata('anggota_status','Anggota Telah Terdaftar');
 		redirect(base_url()."index.php/dashboard/anggota_daftar");
 	}
-	/*ANGGOTA END*/
+	/*END*/
 }
 ?>

@@ -68,6 +68,24 @@ class login extends CI_Controller{
 		}
 	}
 
+	public function forget(){
+		$this->load->view('forget');
+	}
+
+	public function do_forget(){
+		$row = $this->mymodel->select_data('tbl_pegawai',array(
+			'nip' => $_POST['nip']
+			))->row();
+		if($_POST['nip'] == $row->nip && $_POST['birthday'] == $row->ttl){
+			$this->session->set_flashdata('error','Password telah diatur ulang, silahkan periksa email anda.');
+			redirect(base_url()."index.php/login/");
+		}else{
+			$this->session->set_flashdata('error','Data yang anda masukan belum benar.');
+			redirect(base_url()."index.php/login/forget");
+		}
+		
+	}
+
 	public function logout(){
 		$session = array(
 				'nip',

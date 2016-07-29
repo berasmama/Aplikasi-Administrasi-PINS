@@ -70,7 +70,7 @@
         case 'list_probis':
           include('project/list.php'); 
           break;
-          case 'update_probis':
+        case 'update_probis':
           include('project_update/probis.php'); 
           break;
         case 'justifikasi':
@@ -79,7 +79,7 @@
         case 'list_justifikasi':
           include('project/list.php');
           break;
-          case 'update_justifikasi':
+        case 'update_justifikasi':
           include('project_update/justifikasi.php');
           break;
         case 'alur_proyek':
@@ -88,8 +88,17 @@
         case 'list_alur_proyek':
           include('project/list.php');
           break;
-          case 'update_alur_proyek';
+        case 'update_alur_proyek';
           include('project_update/alur_proyek.php');
+          break;
+        case 'upload';
+          include('project/upload.php');
+          break;
+        case 'list_upload';
+          include('project/list_upload.php');
+          break;
+        case 'detail_upload';
+          include('project/detail_upload.php');
           break;
         default:
           if($this->session->userdata('jabatan') == "Manager"){
@@ -151,6 +160,11 @@
 <script src="<?php echo base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
-
+<script type="text/javascript">
+  $("#pop").on("click", function() {
+   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+</script>
 </body>
 </html>
